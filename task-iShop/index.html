@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>iShop</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/goods-table-style.css">
@@ -19,17 +22,19 @@
 
     <script>
 
+        const shopName = "iShop";
+
         const phoneDataArray = [
             {phoneModel: "iPhone 14", phoneImage: "https://m.media-amazon.com/images/I/61cwywLZR-L._AC_UF1000,1000_QL80_.jpg", phonePrice: "$800", stockQuantity: 35, productNumber: 1},
-            {phoneModel: "iPhone 13", phoneImage: "https://m.media-amazon.com/images/I/61BUt5ZErdL._AC_UF894,1000_QL80_.jpg", phonePrice: "$600", stockQuantity: 31, productNumber: 2},
+            {phoneModel: "iPhone 13", phoneImage: "https://m.media-amazon.com/images/I/61BUt5ZErdL._AC_UF894,1000_QL80_.jpg", phonePrice: "$600", stockQuantity: 35, productNumber: 2},
             {phoneModel: "iPhone 12", phoneImage: "https://m.media-amazon.com/images/I/71LM+uRWjML.jpg", phonePrice: "$550", stockQuantity: 28, productNumber: 3},
             {phoneModel: "iPhone 11", phoneImage: "https://m.media-amazon.com/images/I/612kg3rGyYL._AC_UF1000,1000_QL80_.jpg", phonePrice: "$320", stockQuantity: 18, productNumber: 4},
             {phoneModel: "iPhone X", phoneImage: "https://m.media-amazon.com/images/I/61nlT53kRKL.jpg", phonePrice: "$250", stockQuantity: 8, productNumber: 5},
             {phoneModel: "iPhone SE2", phoneImage: "https://m.media-amazon.com/images/I/813ovO0PGGL._AC_UF1000,1000_QL80_.jpg", phonePrice: "$285", stockQuantity: 20, productNumber: 6},
         ]; 
-        
+
         ReactDOM.render(
-          React.createElement(GoodsTable, {data: phoneDataArray}),
+          React.createElement(GoodsTable, {shopName: shopName, data: phoneDataArray}),
           document.querySelector(".wrapper")
         );
 

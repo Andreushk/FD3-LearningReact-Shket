@@ -14,15 +14,8 @@ const GoodsTable = React.createClass({
     };
   },
 
-  setSelectedProduct: function(event) {
-    event.preventDefault();
-
-    if (event.target.closest(".delete-button")) return;
-    
-    if (event.target.closest(".product")) {
-      const productCode = Number(event.target.closest(".product").getAttribute("data-productcode"));
-      this.setState({selectedProduct: productCode});
-    };
+  setSelectedProduct: function(productCode) {
+    this.setState({selectedProduct: productCode});
   },
 
   deleteProduct: function(productCode) {
@@ -45,19 +38,19 @@ const GoodsTable = React.createClass({
 
     const productsArray = dataKeys.map(item => {
       if (this.state.data[item].productCode === this.state.selectedProduct) {
-        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: true, deleteBtnHandler: this.deleteProduct,
-        name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, price: this.state.data[item].phonePrice, 
-        stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
+        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: true, deleteBtnHandler: this.deleteProduct, 
+        productSelectHandler: this.setSelectedProduct, name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, 
+        price: this.state.data[item].phonePrice, stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
       } else {
-        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: false, deleteBtnHandler: this.deleteProduct,
-        name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, price: this.state.data[item].phonePrice, 
-        stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
+        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: false, deleteBtnHandler: this.deleteProduct, 
+        productSelectHandler: this.setSelectedProduct, name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, 
+        price: this.state.data[item].phonePrice, stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
       };      
     });
     
     return React.DOM.div({className: "goods-table-container"}, 
       React.DOM.h1(null, this.props.shopName),
-      React.DOM.table({onClick: this.setSelectedProduct}, 
+      React.DOM.table(null, 
         React.DOM.thead(null, 
           React.DOM.tr(null,
             React.DOM.th(null, "Phone Model"),

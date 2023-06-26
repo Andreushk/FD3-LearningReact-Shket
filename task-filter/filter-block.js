@@ -1,4 +1,5 @@
 const FilterBlock = React.createClass({
+
   displayName: "FilterBlock",
 
   propTypes: {
@@ -15,17 +16,15 @@ const FilterBlock = React.createClass({
     };
   },
 
-  toggleSorting: function(e) {
+  toggleSorting: function() {
     this.state.isSortActive ? this.setState({isSortActive: false}) : this.setState({isSortActive: true});
   },
 
-  setValueForSearch: function(e) {
-    e.preventDefault();
-    this.setState({stringForSearch: e.target.value});
+  setValueForSearch: function(valueForSearch) {
+    this.setState({stringForSearch: valueForSearch});
   },
 
-  resetParametrs: function(e) {
-    e.preventDefault();
+  resetSettings: function() {
     this.setState({isSortActive: false, stringForSearch: ""});
   },
 
@@ -48,19 +47,10 @@ const FilterBlock = React.createClass({
   render: function() {
 
     const wordsArray = this.makeArrayUsingParametrs();
-    const arrayOfParagraphsWithWords = wordsArray.map(word => 
-      React.createElement(ListItems, {key: word, word: word})
-    );
 
     return React.DOM.div({className: "filter"},
-      React.DOM.div({className: "filter__head"},
-        React.DOM.input({type: "checkbox", checked: this.state.isSortActive, onChange: this.toggleSorting}),
-        React.DOM.input({type: "text", value: this.state.stringForSearch, onChange: this.setValueForSearch}),
-        React.DOM.button({type: "button", onClick: this.resetParametrs}, "Reset"),
-      ),
-      React.DOM.div({className: "filter__body"},
-        React.DOM.div({className: "filter__items-container"}, arrayOfParagraphsWithWords),
-      ),
+      React.createElement(FilterControlls, {checked: this.state.isSortActive, inputValue: this.state.stringForSearch, toggleSorting: this.toggleSorting, setValueForSearch: this.setValueForSearch, resetSettings: this.resetSettings}),
+      React.createElement(FilterItems, {wordsArray: wordsArray}),
     );
 
   },

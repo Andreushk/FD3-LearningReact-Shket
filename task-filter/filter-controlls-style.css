@@ -1,0 +1,57 @@
+.filter__controlls {
+  box-sizing: border-box;
+  padding: 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+}
+
+.filter__controlls > input {
+  box-sizing: border-box;
+  outline: none;
+}
+
+.filter__controlls > input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+.filter__controlls > input[type="checkbox"]:checked {
+  border-color: #02a810;
+  background-color: #02a810;
+}
+
+.filter__controlls > input[type="text"] {
+  width: 200px;
+  height: 28px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  padding: 0 7px;
+  letter-spacing: 0.8px;
+}
+
+.filter__controlls > button {
+  box-sizing: border-box;
+  width: 105px;
+  height: 28px;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.filter__controlls > button:hover {
+  background-color: #e9e9e9;
+}

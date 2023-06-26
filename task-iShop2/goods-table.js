@@ -3,7 +3,7 @@ const GoodsTable = React.createClass({
   displayName: "GoodsTable",
 
   propTypes: {
-    dataDefault: React.PropTypes.object.isRequired,
+    dataDefault: React.PropTypes.array.isRequired,
     shopName: React.PropTypes.string.isRequired,
   },
 
@@ -19,32 +19,29 @@ const GoodsTable = React.createClass({
   },
 
   deleteProduct: function(productCode) {
-    for (const key in this.state.data) {
-      const productCodeInData = this.state.data[key].productCode;
 
-      if (productCodeInData === productCode) {
-        const isUserWantsToDelete = confirm(`Are you sure you want to remove the ${this.state.data[key].phoneModel} from this catalog?`);
+    for (let i = 0; i < this.state.data.length; i++) {
+      if (this.state.data[i].productCode === productCode) {
+        const isUserWantsToDelete = confirm(`Are you sure you want to remove the ${this.state.data[i].phoneModel} from this catalog?`);
         if (!isUserWantsToDelete) return;
-        const newData = {...this.state.data};
-        delete newData[key];
-        this.setState({data: newData});
-      };
+        const newArray = [...this.state.data];
+        newArray.splice(i, 1);
+        this.setState({data: newArray});
+      }
     };
+
   },
 
   render: function() {
-
-    const dataKeys = Object.keys(this.state.data);
-
-    const productsArray = dataKeys.map(item => {
-      if (this.state.data[item].productCode === this.state.selectedProduct) {
-        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: true, deleteBtnHandler: this.deleteProduct, 
-        productSelectHandler: this.setSelectedProduct, name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, 
-        price: this.state.data[item].phonePrice, stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
+    const productsArray = this.state.data.map(item => {
+      if (item.productCode === this.state.selectedProduct) {
+        return React.createElement(TableItems, {key: item.productCode, isSelected: true, deleteBtnHandler: this.deleteProduct, 
+        productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
+        price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});
       } else {
-        return React.createElement(TableItems, {key: this.state.data[item].productCode, isSelected: false, deleteBtnHandler: this.deleteProduct, 
-        productSelectHandler: this.setSelectedProduct, name: this.state.data[item].phoneModel, image: this.state.data[item].phoneImage, 
-        price: this.state.data[item].phonePrice, stockQuantity: this.state.data[item].stockQuantity, productCode: this.state.data[item].productCode});
+        return React.createElement(TableItems, {key: item.productCode, isSelected: false, deleteBtnHandler: this.deleteProduct, 
+        productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
+        price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});
       };      
     });
     

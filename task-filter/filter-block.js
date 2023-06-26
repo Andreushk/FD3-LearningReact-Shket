@@ -10,6 +10,7 @@ const FilterBlock = React.createClass({
 
   getInitialState: function() {
     return {
+      defaultWordsArray: this.props.defaultWordsArray,
       wordsArrayForRender: this.props.defaultWordsArray,
       isSortActive: false,
       stringForSearch: "",
@@ -17,19 +18,19 @@ const FilterBlock = React.createClass({
   },
 
   toggleSorting: function() {
-    this.state.isSortActive ? this.setState({isSortActive: false}) : this.setState({isSortActive: true});
+    this.state.isSortActive ? this.setState({isSortActive: false}, this.makeArrayUsingParametrs) : this.setState({isSortActive: true}, this.makeArrayUsingParametrs);
   },
 
   setValueForSearch: function(valueForSearch) {
-    this.setState({stringForSearch: valueForSearch});
+    this.setState({stringForSearch: valueForSearch}, this.makeArrayUsingParametrs);
   },
 
   resetSettings: function() {
-    this.setState({isSortActive: false, stringForSearch: ""});
+    this.setState({isSortActive: false, stringForSearch: ""}, this.makeArrayUsingParametrs);
   },
 
   makeArrayUsingParametrs: function() {
-    let resultArray = [...this.state.wordsArrayForRender];
+    let resultArray = [...this.state.defaultWordsArray];
 
     if (this.state.stringForSearch) {
       const newWordsArray = [];
@@ -41,18 +42,14 @@ const FilterBlock = React.createClass({
 
     if (this.state.isSortActive) resultArray.sort();
 
-    return resultArray
+    this.setState({wordsArrayForRender: resultArray});
   },
 
   render: function() {
-
-    const wordsArray = this.makeArrayUsingParametrs();
-
     return React.DOM.div({className: "filter"},
       React.createElement(FilterControlls, {checked: this.state.isSortActive, inputValue: this.state.stringForSearch, toggleSorting: this.toggleSorting, setValueForSearch: this.setValueForSearch, resetSettings: this.resetSettings}),
-      React.createElement(FilterItems, {wordsArray: wordsArray}),
+      React.createElement(FilterItems, {wordsArray: this.state.wordsArrayForRender}),
     );
-
   },
 
 });

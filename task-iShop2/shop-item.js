@@ -16,7 +16,7 @@ const TableItems = React.createClass({
   getProductCodeForDelete: function(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.props.deleteBtnHandler(this.props.productCode);
+    this.props.deleteBtnHandler(this.props.productCode, this.props.name);
   },
 
   getProductCodeForMark: function(event) {

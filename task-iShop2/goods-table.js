@@ -18,18 +18,15 @@ const GoodsTable = React.createClass({
     this.setState({selectedProduct: productCode});
   },
 
-  deleteProduct: function(productCode) {
+  deleteProduct: function(productCode, productName) {
+    const isUserWantsToDelete = confirm(`Are you sure you want to remove the ${productName} from this catalog?`);
+    if (!isUserWantsToDelete) return;
 
-    for (let i = 0; i < this.state.data.length; i++) {
-      if (this.state.data[i].productCode === productCode) {
-        const isUserWantsToDelete = confirm(`Are you sure you want to remove the ${this.state.data[i].phoneModel} from this catalog?`);
-        if (!isUserWantsToDelete) return;
-        const newArray = [...this.state.data];
-        newArray.splice(i, 1);
-        this.setState({data: newArray});
-      }
-    };
+    const arrayWithoutDeletedProduct = this.state.data.filter((item) => {
+      if (item.productCode !== productCode) return item;
+    });
 
+    this.setState({data: arrayWithoutDeletedProduct});
   },
 
   render: function() {

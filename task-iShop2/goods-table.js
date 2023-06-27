@@ -31,15 +31,11 @@ const GoodsTable = React.createClass({
 
   render: function() {
     const productsArray = this.state.data.map(item => {
-      if (item.productCode === this.state.selectedProduct) {
-        return React.createElement(TableItems, {key: item.productCode, isSelected: true, deleteBtnHandler: this.deleteProduct, 
-        productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
-        price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});
-      } else {
-        return React.createElement(TableItems, {key: item.productCode, isSelected: false, deleteBtnHandler: this.deleteProduct, 
-        productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
-        price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});
-      };      
+      const isSelected = item.productCode === this.state.selectedProduct;
+      
+      return React.createElement(TableItems, {key: item.productCode, isSelected: isSelected, deleteBtnHandler: this.deleteProduct, 
+      productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
+      price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});   
     });
     
     return React.DOM.div({className: "goods-table-container"}, 

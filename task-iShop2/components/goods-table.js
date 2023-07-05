@@ -1,4 +1,7 @@
-import { TableItems } from "./shop-item.js";
+import React from "react";
+import {TableItem} from "./shop-item";
+
+import "./goods-table-style.css";
 
 export const GoodsTable = React.createClass({
 
@@ -35,7 +38,7 @@ export const GoodsTable = React.createClass({
     const productsArray = this.state.data.map(item => {
       const isSelected = item.productCode === this.state.selectedProduct;
       
-      return React.createElement(TableItems, {key: item.productCode, isSelected: isSelected, deleteBtnHandler: this.deleteProduct, 
+      return React.createElement(TableItem, {key: item.productCode, isSelected: isSelected, deleteBtnHandler: this.deleteProduct, 
       productSelectHandler: this.setSelectedProduct, name: item.phoneModel, image: item.phoneImage, 
       price: item.phonePrice, stockQuantity: item.stockQuantity, productCode: item.productCode});   
     });

@@ -20,7 +20,7 @@ module.exports = {
                 use: extractCSS.extract({
                     use: ["css-loader"]
                 })
-            }            
+            },       
         ] 
     },
     plugins: [

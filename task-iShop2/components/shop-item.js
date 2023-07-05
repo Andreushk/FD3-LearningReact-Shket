@@ -1,6 +1,10 @@
-export const TableItems = React.createClass({
+import React from "react";
 
-  displayName: "TableItems",
+import "./shop-item-style.css";
+
+export const TableItem = React.createClass({
+
+  displayName: "TableItem",
 
   propTypes: {
     isSelected: React.PropTypes.bool.isRequired,

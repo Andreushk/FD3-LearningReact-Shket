@@ -3,9 +3,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import GoodsTable from "./components/goods-table.js";
+import "./style.css";
 
-import data from "./products-data/products-data.json" assert {type: "json"};
+import {GoodsTable} from "./components/goods-table";
+import data from "./products-data/products-data.json";
 
 const shopName = "iShop";
 

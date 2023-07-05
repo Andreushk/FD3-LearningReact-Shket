@@ -1,4 +1,6 @@
-const GoodsTable = React.createClass({
+import { TableItems } from "./shop-item.js";
+
+export const GoodsTable = React.createClass({
 
   displayName: "GoodsTable",
 

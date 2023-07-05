@@ -1,4 +1,4 @@
-const TableItems = React.createClass({
+export const TableItems = React.createClass({
 
   displayName: "TableItems",
 

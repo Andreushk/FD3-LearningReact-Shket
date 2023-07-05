@@ -8,36 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>iShop &ndash; 2</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="goods-table-style.css">
-    <link rel="stylesheet" href="shop-item-style.css">
+    <link rel="stylesheet" href="components/goods-table-style.css">
+    <link rel="stylesheet" href="components/shop-item-style.css">
 </head>
 <body>
     <div class="wrapper"></div>
-
-    <script src="https://unpkg.com/react@15/dist/react.js"></script> 
-    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
-
-    <script src="goods-table.js"></script>
-    <script src="shop-item.js"></script>
-
-    <script>
-
-        const shopName = "iShop";
-
-        const data = [
-            {phoneModel: "iPhone 14", phoneImage: "https://m.media-amazon.com/images/I/61cwywLZR-L._AC_UF1000,1000_QL80_.jpg", phonePrice: "$800", stockQuantity: 35, productCode: 1},
-            {phoneModel: "iPhone 13", phoneImage: "https://m.media-amazon.com/images/I/61BUt5ZErdL._AC_UF894,1000_QL80_.jpg", phonePrice: "$600", stockQuantity: 35, productCode: 2},
-            {phoneModel: "iPhone 12", phoneImage: "https://m.media-amazon.com/images/I/71LM+uRWjML.jpg", phonePrice: "$550", stockQuantity: 28, productCode: 3},
-            {phoneModel: "iPhone 11", phoneImage: "https://m.media-amazon.com/images/I/612kg3rGyYL._AC_UF1000,1000_QL80_.jpg", phonePrice: "$320", stockQuantity: 18, productCode: 4},
-            {phoneModel: "iPhone X", phoneImage: "https://m.media-amazon.com/images/I/61nlT53kRKL.jpg", phonePrice: "$250", stockQuantity: 8, productCode: 5},
-            {phoneModel: "iPhone SE2", phoneImage: "https://m.media-amazon.com/images/I/813ovO0PGGL._AC_UF1000,1000_QL80_.jpg", phonePrice: "$285", stockQuantity: 20, productCode: 6},
-        ];
-
-        ReactDOM.render(
-            React.createElement(GoodsTable, {shopName: shopName, dataDefault: data}),
-            document.querySelector(".wrapper")
-        );
-
-    </script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

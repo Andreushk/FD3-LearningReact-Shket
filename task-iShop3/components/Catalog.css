@@ -1,0 +1,68 @@
+.catalog > .catalog__title > h1 {
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.catalog > .catalog__table-container > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.catalog > .catalog__table-container > table > thead > tr {
+    height: 50px;
+    font-size: 18px;
+}
+
+.catalog > .catalog__table-container > table > tr > th,
+.catalog > .catalog__table-container > table tr > td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.catalog > .catalog__table-container > table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.catalog > .catalog__table-container > table img {
+    height: 100px;
+    width: auto;
+}
+
+.catalog > .catalog__table-container > table .selected-product {
+    background-color: #f5f5f5;
+}
+
+.catalog > .catalog__table-container > button {
+    display: block;
+    box-sizing: border-box;
+    width: 200px;
+    height: 40px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.catalog > .catalog__table-container > button:hover {
+    background-color: #f2f2f2;
+}
+
+.catalog > .catalog__product-information {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.catalog button:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+    transition: 0.1s ease;
+}

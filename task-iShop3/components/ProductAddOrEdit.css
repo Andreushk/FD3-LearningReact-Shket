@@ -1,0 +1,68 @@
+.product-adding .product-adding__form,
+.product-editing .product-editing__form {
+    box-sizing: border-box;
+    width: 350px;
+    margin: 50px auto;
+}
+
+.product-adding .product-adding__form-group,
+.product-editing .product-editing__form-group {
+    margin-bottom: 10px;
+}
+
+.product-adding label,
+.product-editing label {
+    display: block;
+    font-weight: bold;
+}
+
+.product-adding .product-adding__form-group:first-of-type input,
+.product-editing .product-editing__form-group:first-of-type input {
+    background-color: #f2f2f2;
+}
+
+.product-adding input,
+.product-editing input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    outline-width: 0;
+}
+
+.product-adding .product-adding__form-error,
+.product-editing .product-editing__form-error {
+    color: #aa0202;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.product-adding__form-buttons,
+.product-editing__form-buttons {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.product-adding__form-buttons button,
+.product-editing__form-buttons button {
+    box-sizing: border-box;
+    width: 47%;
+    height: 35px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-adding__form-buttons button:hover,
+.product-editing__form-buttons button:hover {
+    background-color: #f2f2f2;
+}

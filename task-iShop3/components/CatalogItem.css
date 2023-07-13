@@ -1,0 +1,20 @@
+.catalog__item-controlls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.catalog__item-controlls > button {
+    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.catalog__item-controlls > button:hover {
+    background-color: #f2f2f2;
+}

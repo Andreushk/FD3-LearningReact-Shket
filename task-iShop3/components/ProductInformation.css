@@ -1,0 +1,21 @@
+.product-information > table {
+    width: 400px;
+    border-collapse: collapse;
+}
+
+.product-information > table > thead > tr {
+    height: 45px;
+    font-size: 16px;
+}
+
+.product-information > table > tbody > tr > th,
+.product-information > table > tbody > tr > td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-information > table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}

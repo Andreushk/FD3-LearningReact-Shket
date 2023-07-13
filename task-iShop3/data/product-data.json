@@ -1,0 +1,8 @@
+[
+  {"phoneModel": "iPhone 14", "phoneImage": "https://m.media-amazon.com/images/I/61cwywLZR-L._AC_UF1000,1000_QL80_.jpg", "phonePrice": "$799", "stockQuantity": 50, "productCode": 1},
+  {"phoneModel": "iPhone 13", "phoneImage": "https://m.media-amazon.com/images/I/61BUt5ZErdL._AC_UF894,1000_QL80_.jpg", "phonePrice": "$599", "stockQuantity": 50, "productCode": 2},
+  {"phoneModel": "iPhone 12", "phoneImage": "https://m.media-amazon.com/images/I/71LM+uRWjML.jpg", "phonePrice": "$550", "stockQuantity": 35, "productCode": 3},
+  {"phoneModel": "iPhone 11", "phoneImage": "https://m.media-amazon.com/images/I/612kg3rGyYL._AC_UF1000,1000_QL80_.jpg", "phonePrice": "$490", "stockQuantity": 25, "productCode": 4},
+  {"phoneModel": "iPhone X", "phoneImage": "https://m.media-amazon.com/images/I/61nlT53kRKL.jpg", "phonePrice": "$299", "stockQuantity": 8, "productCode": 5},
+  {"phoneModel": "iPhone SE2", "phoneImage": "https://m.media-amazon.com/images/I/813ovO0PGGL._AC_UF1000,1000_QL80_.jpg", "phonePrice": "$429", "stockQuantity": 48, "productCode": 6}
+]

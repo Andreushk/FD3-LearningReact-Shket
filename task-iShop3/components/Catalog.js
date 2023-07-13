@@ -62,10 +62,7 @@ export class Catalog extends React.Component {
     const isUserWantsToDelete = confirm(`Are you sure you want to remove the ${productName} from this catalog?`);
     if (!isUserWantsToDelete) return;
 
-    const dataWithoutProduct = this.state.dataForRender.filter(product => {
-      if (productCode !== product.productCode) return product;
-    });
-
+    const dataWithoutProduct = this.state.dataForRender.filter(product => productCode !== product.productCode);
     this.setState({dataForRender: dataWithoutProduct, selectedProductCode: null, selectedProductData: null});
   };
 

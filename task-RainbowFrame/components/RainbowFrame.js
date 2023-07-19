@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { RainbowFrameItem } from "./RainbowFrameItem.js";
 
 export class RainbowFrame extends React.Component {
 
@@ -16,8 +15,8 @@ export class RainbowFrame extends React.Component {
     for (let i = 0; i < this.props.colors.length; i++) {
       const color = this.props.colors[i];
 
-      const JSXPart = <RainbowFrameItem color={color}> {JSXForRender} </RainbowFrameItem>
-      JSXForRender = JSXPart;
+      const newJSXPart = <div style={{border: `10px solid ${color}`, padding: "5px"}}> {JSXForRender} </div>
+      JSXForRender = newJSXPart;
     };
 
     return JSXForRender;

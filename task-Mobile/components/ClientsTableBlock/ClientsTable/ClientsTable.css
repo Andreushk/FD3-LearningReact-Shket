@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    position: relative;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.clients__add-button {
+    display: block;
+    width: 150px;
+    margin: 10px auto;
+}
+
+.clients__add-button > button {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.clients__add-button > button:hover {
+    background-color: #f2f2f2;
+}

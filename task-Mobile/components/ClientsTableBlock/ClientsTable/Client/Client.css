@@ -1,0 +1,56 @@
+.clients__edit,
+.clients__delete,
+.clients__add,
+.clients__save {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    padding: 8px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.clients__edit:hover,
+.clients__delete:hover,
+.clients__add:hover,
+.clients__save:hover {
+    background-color: #f2f2f2;
+}
+
+.clients__status-cell {
+    position: relative;
+}
+
+.clients__status-cell::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.status-active::before {
+    background-color: green;
+}
+
+.status-inactive::before {
+    background-color: rgb(201, 5, 5);
+}
+
+.clients__table input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    outline-width: 0;
+}

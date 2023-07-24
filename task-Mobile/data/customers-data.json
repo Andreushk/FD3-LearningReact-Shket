@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 1,
+    "name": "Anna",
+    "surname": "Ivanova",
+    "patronymic": "Sergeevna",
+    "balance": "$5"
+  },
+  {
+    "ID": 2,
+    "name": "Aleksey",
+    "surname": "Petrov",
+    "patronymic": "Nikolaevich",
+    "balance": "$1"
+  },
+  {
+    "ID": 3,
+    "name": "Ekaterina",
+    "surname": "Smirnova",
+    "patronymic": "Vladimirovna",
+    "balance": "$0"
+  },
+  {
+    "ID": 4,
+    "name": "Igor",
+    "surname": "Fedorov",
+    "patronymic": "Vasilyevich",
+    "balance": "$2"
+  },
+  {
+    "ID": 5,
+    "name": "Olga",
+    "surname": "Kozlova",
+    "patronymic": "Pavlovna",
+    "balance": "$8"
+  },
+  {
+    "ID": 6,
+    "name": "Pavel",
+    "surname": "Sokolov",
+    "patronymic": "Andreevich",
+    "balance": "$1"
+  },
+  {
+    "ID": 7,
+    "name": "Maria",
+    "surname": "Nikolaeva",
+    "patronymic": "Vasilyevna",
+    "balance": "$0"
+  },
+  {
+    "ID": 8,
+    "name": "Dmitriy",
+    "surname": "Andreev",
+    "patronymic": "Olegovich",
+    "balance": "$51"
+  },
+  {
+    "ID": 9,
+    "name": "Elena",
+    "surname": "Vasilyeva",
+    "patronymic": "Igorevna",
+    "balance": "$11"
+  },
+  {
+    "ID": 10,
+    "name": "Ilya",
+    "surname": "Pavlov",
+    "patronymic": "Stepanovich",
+    "balance": "$7"
+  }
+]

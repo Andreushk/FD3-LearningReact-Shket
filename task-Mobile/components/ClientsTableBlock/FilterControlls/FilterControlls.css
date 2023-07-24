@@ -1,0 +1,22 @@
+.clients__container > .clients__filter-controlls {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.clients__container > .clients__filter-controlls > button {
+    box-sizing: border-box;
+    padding: 8px 15px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.clients__container > .clients__filter-controlls > .active {
+    background-color: #f2f2f2;
+}
